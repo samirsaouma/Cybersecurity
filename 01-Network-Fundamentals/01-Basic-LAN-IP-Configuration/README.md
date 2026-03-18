@@ -1,6 +1,6 @@
-**Basic LAN IP configuration lab**
+## Basic LAN IP configuration lab
 
-**Objective**
+## Objective 
 Configure devices manually on the same LAN using static IP addressing, verify the connectivity through a Layer 2 switch.
 
 **Tools Used**
@@ -29,9 +29,11 @@ Mask: 255.255.255.0
 
 Tests performed:
 
-PC0 → PC2 ping successful
-PC2 → PC1 ping successful
-PC1 → PC0 ping successful
+- PC0 → PC2 ping successful
+- PC2 → PC1 ping successful
+- PC1 → PC0 ping successful
+
+Verified using ICMP ping from command prompt with 0% Loss.
 
 ## Key Concepts Practiced
 
