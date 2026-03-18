@@ -13,6 +13,8 @@ Configure devices manually on the same LAN using static IP addressing, verify th
 
 ![LAN Topology](topology.png)
 
+*Image 1: Simple LAN topology showing ARP resolution and ICMP communication*
+
 ## Key Concepts Practiced
 
 1) IPv4 addressing
