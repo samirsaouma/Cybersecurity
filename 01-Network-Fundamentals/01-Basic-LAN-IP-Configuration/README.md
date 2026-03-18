@@ -11,30 +11,6 @@ Configure devices manually on the same LAN using static IP addressing, verify th
 **Network Topology**
 3 PCs connected to a single switch, common copper straight-through cables.
 
-## Configuration
-
-PC1:
-IP: 192.168.1.1
-Mask: 255.255.255.0
-
-PC2:
-IP: 192.168.1.2
-Mask: 255.255.255.0
-
-PC3:
-IP: 192.168.1.3
-Mask: 255.255.255.0
-
-**Verification**
-
-Tests performed:
-
-- PC0 → PC2 ping successful
-- PC2 → PC1 ping successful
-- PC1 → PC0 ping successful
-
-Verified using ICMP ping from command prompt with 0% Loss.
-
 ## Key Concepts Practiced
 
 1) IPv4 addressing
