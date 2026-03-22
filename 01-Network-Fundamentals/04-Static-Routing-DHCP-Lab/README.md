@@ -163,5 +163,5 @@ Structured troubleshooting
 
 ## Images
 
-![Ping Test](ping.png)
-![DHCP Process](dhcp.png)
+![Ping Test](Static-Routing-Ping.png)
+![DHCP Process](DHCP-Configuration.png)
