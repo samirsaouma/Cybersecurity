@@ -39,7 +39,7 @@ DHCP was used to simulate enterprise IP addressing.
 
 ## Topology
 
-![Topology](images/topologyDHCPsubnetting.png)
+![Topology](topologyDHCPsubnetting.png)
 
 
 
@@ -64,7 +64,7 @@ Excluded addresses were used to reserve gateway addresses.
 
 ## DHCP & Interface Verification
 
-![DHCP & Interface](images/dhcpandinterface.png)
+![DHCP & Interface](dhcpandinterface.png)
 
 Image shows:
 
@@ -76,7 +76,7 @@ Image shows:
 
 ## Host Verification
 
-![IP Assignment](images/pc0dhcpverification.png)
+![IP Assignment](pc0dhcpverification.png)
 
 PCs successfully received:
 
