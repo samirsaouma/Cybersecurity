@@ -1,1 +1,45 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+Router Configuration
+--------------------------------------------------------------------------------------------------------------------------------------------
 
+interface g0/0/0
+ip address 192.168.10.1 255.255.255.192
+no shutdown
+
+interface g0/0/1
+ip address 192.168.10.65 255.255.255.192
+no shutdown
+
+interface g0/1/0
+ip address 192.168.10.129 255.255.255.192
+no shutdown
+
+interface g0/1/1
+ip address 192.168.10.193 255.255.255.192
+no shutdown
+
+ip dhcp excluded-address 192.168.10.1
+ip dhcp excluded-address 192.168.10.65
+ip dhcp excluded-address 192.168.10.129
+ip dhcp excluded-address 192.168.10.193
+
+ip dhcp pool NET1
+network 192.168.10.0 255.255.255.192
+default-router 192.168.10.1
+dns-server 8.8.8.8
+
+ip dhcp pool NET2
+network 192.168.10.64 255.255.255.192
+default-router 192.168.10.65
+dns-server 8.8.8.8
+
+ip dhcp pool NET3
+network 192.168.10.128 255.255.255.192
+default-router 192.168.10.129
+dns-server 8.8.8.8
+
+ip dhcp pool NET4
+network 192.168.10.192 255.255.255.192
+default-router 192.168.10.193
+dns-server 8.8.8.8
+--------------------------------------------------------------------------------------------------------------------------------------------
