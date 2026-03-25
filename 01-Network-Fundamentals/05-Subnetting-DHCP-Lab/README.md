@@ -39,7 +39,7 @@ DHCP was used to simulate enterprise IP addressing.
 
 ## Topology
 
-![Topology](images/topology.png)
+![Topology](images/topologyDHCPsubnetting.png)
 
 
 
