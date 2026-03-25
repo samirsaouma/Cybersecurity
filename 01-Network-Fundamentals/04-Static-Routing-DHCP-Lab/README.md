@@ -92,7 +92,6 @@ Simulation Mode
 CLI configuration  
 ICMP testing  
 
-## Topology
 
 # Lessons Learned
 
