@@ -57,6 +57,6 @@ Understanding packet movement and behavior is important for:
 
 ## Packet Capture Evidence
 
-![Wireshark Capture](wireshark-dns-arp.png)
+![Wireshark Capture](images/wireshark-dns-arp.png)
 
 Image 1 shows Wireshark topology with personal data blocked.

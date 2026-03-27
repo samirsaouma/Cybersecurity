@@ -43,7 +43,7 @@ Router1 to Router2:
 
 ## Topology
 
-![Topology](06topology.png)
+![Topology](images/06topology.png)
 
 ## Configuration Summary
 
@@ -69,7 +69,7 @@ Full device configurations are displayed in configs.txt.
 
 Connectivity was verified through successful ICMP testing between end devices across all networks.
 
-![Routing Verification](06ping.png)
+![Routing Verification](images/06ping.png)
 
 ## Troubleshooting Process
 

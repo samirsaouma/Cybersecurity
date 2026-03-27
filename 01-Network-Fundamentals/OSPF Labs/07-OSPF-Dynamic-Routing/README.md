@@ -22,7 +22,7 @@ Previously static routes were used. The static routes were removed and replaced 
 
 ## Topology & Simulation 
 
-![Topology](07topology.png)
+![Topology](images/07topology.png)
 
 ## OSPF Configuration Overview
 
@@ -39,7 +39,7 @@ Routers then formed the neighbor relationships and exchanged routing information
 
 ## OSPF Neighbor & Routing Table Verification
 
-![OSPF Neighbors](07tables.png)
+![OSPF Neighbors](images/07tables.png)
 
 
 Routes marked with "O" indicate that the routes were learned dynamically through OSPF.

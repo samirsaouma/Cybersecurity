@@ -12,7 +12,7 @@ The goal of this lab was to understand how a router allows communication between
 
 ## Network Topology
 
-![Router Lab](Router-Networking-Topology.png)
+![Router Lab](images/Router-Networking-Topology.png)
 
 Image 1: Two networks connected through a router
 

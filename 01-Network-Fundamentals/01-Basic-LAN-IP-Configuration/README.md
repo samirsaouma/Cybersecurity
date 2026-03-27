@@ -11,7 +11,7 @@ Configure devices manually on the same LAN using static IP addressing, verify th
 **Network Topology**
 3 PCs connected to a single switch, common copper straight-through cables.
 
-![LAN Topology](topology.png)
+![LAN Topology](images/topology.png)
 
 *Image 1: Simple LAN topology showing ARP resolution and ICMP communication*
 
