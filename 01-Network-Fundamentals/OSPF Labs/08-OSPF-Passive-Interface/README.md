@@ -44,7 +44,7 @@ Interface verification:
 
 show ip ospf interface
 
-![Passive](images/ospfinterfacepassive.png)
+![Passive](images/08ospfinterfacepassive.png)
 
 ## Troubleshooting Experience
 
