@@ -54,6 +54,18 @@ Routing path changed successfully due to cost manipulation.
 
 OSPF automatically adjusted route to selected lowest cost route.
 
+Routing path recalculated:
+
+![Route After](images/09costmodificationping.png)
+
+## Connectivity Testing
+
+Connectivity tested using ICMP.
+
+R0 successfully reached R2 LAN after the cost modification.
+
+Ping tests confirmed routing re-assignment and correct path selection.
+
 ## Lessons Learned
 
 OSPF does not use hop count.
