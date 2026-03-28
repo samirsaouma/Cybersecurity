@@ -76,7 +76,7 @@ Router to Router ping
 ## Skills Practiced
 
 OSPF configuration
-Protocol troubleshooting
-Network verification
-Routing behavior analysis
-Infrastructure debugging
+- Protocol troubleshooting
+- Network verification
+- Routing behavior analysis
+- Infrastructure debugging
