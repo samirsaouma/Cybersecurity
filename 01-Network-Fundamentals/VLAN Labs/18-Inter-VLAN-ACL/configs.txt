@@ -1,0 +1,166 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+PC CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+PCO:
+IP Address: 192.168.10.10
+Mask: 255.255.255.0
+Default-Gateway: 192.168.10.1
+DNS: 8.8.8.8
+
+
+PC1:
+IP Address: 192.168.20.10
+Mask: 255.255.255.0
+Default-Gateway: 192.168.20.1
+DNS: 8.8.8.8
+
+
+PC2:
+IP Address: 192.168.30.10
+Mask: 255.255.255.0
+Default-Gateway: 192.168.30.1
+DNS: 8.8.8.8
+
+
+PC3:
+IP Address: 192.168.40.10
+Mask: 255.255.255.0
+Default-Gateway: 192.168.40.1
+DNS: 8.8.8.8
+
+
+PC4:
+IP Address: 192.168.50.10
+Mask: 255.255.255.0
+Default-Gateway: 192.168.50.1
+DNS: 8.8.8.8
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+INTERFACE CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Switch 0:
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 20
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 30
+
+interface fa0/4
+ switchport mode access
+ switchport access vlan 40
+
+interface fa0/5
+ switchport mode access
+ switchport access vlan 50
+
+interface g0/1
+ switchport mode trunk
+
+Router0:
+
+interface g0/0/0
+ no shutdown
+
+interface g0/0/0.10
+ encapsulation dotIQ 10
+ ip address 192.168.10.1
+
+
+interface g0/0/0.20
+ encapsulation dotIQ 20
+ ip address 192.168.20.1
+
+
+interface g0/0/0.30
+ encapsulation dotIQ 30
+ ip address 192.168.30.1
+
+
+interface g0/0/0.40
+ encapsulation dotIQ 40
+ ip address 192.168.40.1
+
+
+interface g0/0/0.50
+ encapsulation dotIQ 50
+ ip address 192.168.50.1
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+VLAN COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+vlan 10
+name GUEST
+
+vlan 20
+name STAFF
+
+vlan 30
+name MANAGEMENT
+
+vlan 40
+name POS
+
+vlan 50
+name INFRASTRUCTURE
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ACL COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Router0:
+
+VLAN 10 POLICY (GUEST)
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.40.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.50.0 0.0.0.255
+access-list 110 permit ip any any
+
+interface g0/0/0.10
+ ip access-group 110 in
+
+
+VLAN 20 POLICY (STAFF)
+access-list 120 deny ip 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255
+access-list 120 deny ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 120 permit ip any any
+
+interface g0/0/0.20
+ ip access-group 120 in
+
+
+
+VLAN 40 policy (POS)
+access-list 140 deny ip 192.168.40.0 0.0.0.255 192.168.10.0 0.0.0.255
+access-list 140 deny ip 192.168.40.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 140 deny ip 192.168.40.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 140 permit ip any any
+
+interface g0/0/0.40
+ ip access-group 140 in
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+LAB COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+show vlan brief
+
+show interface status
+
+ping
+
+show mac address-table
+
+show interfaces trunk
+
+show ip route

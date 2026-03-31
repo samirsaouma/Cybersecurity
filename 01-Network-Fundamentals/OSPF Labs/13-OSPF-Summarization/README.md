@@ -49,7 +49,7 @@ Designed to summarize into:
 
 Before summarization the backbone router learns individual routes.
 
-![Before](images/routeverificationbefore.png)
+![Before](images/13routeverificationbefore.png)
 
 ## Summarization Configuration
 
