@@ -63,9 +63,13 @@ This demonstrates how STP topology depends on root placement.
 
 **Verification:**
 
+![Topology](images/20topology.png)
+
+_Image 4: Topology after Root Configurations_
+
 ![Ports After](images/20rootchangeagain.png)
 
-_Image 4: SW2 Port Changes after Root Primary Modification_
+_Image 5: SW2 Port Changes after Root Primary Modification_
 
 # Key Learning Points
 
