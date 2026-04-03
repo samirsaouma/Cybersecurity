@@ -1,0 +1,164 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+PC CONFIGS & VLANS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+PC0 (VLAN 10):
+IP Address: 192.168.10.10
+Mask: 255.255.255.0
+
+
+PC1 (VLAN 20):
+IP Address: 192.168.20.10
+Mask: 255.255.255.0
+
+
+PC2 (VLAN 20):
+IP Address: 192.168.20.11
+Mask: 255.255.255.0
+
+
+PC3 (VLAN 10):
+IP Address: 192.168.10.11
+Mask: 255.255.255.0
+
+
+PC4 (VLAN 10):
+IP Address: 192.168.10.12
+Mask: 255.255.255.0
+
+
+PC5 (VLAN 30):
+IP Address: 192.168.30.10
+Mask: 255.255.255.224
+
+
+PC6 (VLAN 30):
+IP Address: 192.168.30.11
+Mask: 255.255.255.224
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+INTERFACE CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+SW1:
+ spanning-tree vlan 1,10,20,30 root primary
+
+
+SW2:
+ spanning-tree vlan 1,10,20,30 root secondary
+
+
+Sw0:
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/11
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/12
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+
+
+Sw1:
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+
+
+Sw2:
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+interface fa0/3
+ switchport mode trunk
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/11
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+
+
+Sw3:
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+interface fa0/3
+ switchport mode trunk
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/11
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+VLAN COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+vlan 10
+name USERS
+
+vlan 20
+name STAFF
+
+vlan 30
+name SERVERS
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+LAB COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+show vlan brief
+
+show interface status
+
+ping
+
+show mac address-table
+
+show spanning-tree
+
+show spanning-tree interface
+
+show spanning-tree summary
+
+show spanning-tree detail
