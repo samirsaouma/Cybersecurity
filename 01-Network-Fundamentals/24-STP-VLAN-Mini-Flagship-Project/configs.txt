@@ -1,0 +1,277 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+PC CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+VLAN 10 — GUEST
+Network: 192.168.10.0/24
+Gateway: 192.168.10.1
+
+PC0:
+IP Address: 192.168.10.10
+Mask: 255.255.255.0
+Default Gateway: 192.168.10.1
+DNS: 8.8.8.8
+
+PC1:
+IP Address: 192.168.10.11
+Mask: 255.255.255.0
+Default Gateway: 192.168.10.1
+DNS: 8.8.8.8
+
+VLAN 20 — STAFF
+Network: 192.168.20.0/24
+Gateway: 192.168.20.1
+
+PC2:
+IP Address: 192.168.20.10
+Mask: 255.255.255.0
+Gateway: 192.168.20.1
+DNS: 8.8.8.8
+
+VLAN 30 — MANAGEMENT
+Network: 192.168.30.0/24
+Gateway: 192.168.30.1
+
+PC3:
+IP Address: 192.168.30.10
+Mask: 255.255.255.0
+Gateway: 192.168.30.1
+DNS: 8.8.8.8
+
+VLAN 40 — POS
+Network: 192.168.40.0/29
+Gateway: 192.168.40.1
+
+PC4:
+IP Address: 192.168.40.3
+Mask: 255.255.255.248
+Default Gateway: 192.168.40.1
+DNS: 8.8.8.8
+
+VLAN 50 — SERVER
+Network: 192.168.50.0/29
+Gateway: 192.168.50.1
+
+PC5:
+IP Address: 192.168.50.3
+Mask: 255.255.255.248
+Default Gateway: 192.168.50.1
+DNS: 8.8.8.8
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ROUTER CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+interface GigabitEthernet0/0/0
+ no ip address
+ no shutdown
+
+interface GigabitEthernet0/0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip access-group 110 in
+
+interface GigabitEthernet0/0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ ip access-group 120 in
+
+interface GigabitEthernet0/0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+
+interface GigabitEthernet0/0/0.40
+ encapsulation dot1Q 40
+ ip address 192.168.40.1 255.255.255.248
+ ip access-group 140 in
+
+interface GigabitEthernet0/0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.50.1 255.255.255.248
+
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.40.0 0.0.0.7
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.50.0 0.0.0.7
+access-list 110 permit ip any any
+
+access-list 120 deny ip 192.168.20.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 120 deny ip 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.7
+access-list 120 permit ip any any
+
+access-list 140 deny ip 192.168.40.0 0.0.0.7 192.168.10.0 0.0.0.255
+access-list 140 deny ip 192.168.40.0 0.0.0.7 192.168.20.0 0.0.0.255
+access-list 140 deny ip 192.168.40.0 0.0.0.7 192.168.30.0 0.0.0.255
+access-list 140 permit ip any any
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+SWITCH CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Switch 0:
+
+spanning-tree mode pvst
+
+vlan 10
+ name GUEST
+vlan 20
+ name STAFF
+vlan 30
+ name MANAGEMENT
+vlan 40
+ name POS
+vlan 50
+ name SERVER
+
+interface FastEthernet0/1
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/2
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface GigabitEthernet0/1
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+spanning-tree vlan 1,10,20,30,40,50 root primary
+
+
+Switch 1:
+
+spanning-tree mode pvst
+
+vlan 10
+ name GUEST
+vlan 20
+ name STAFF
+vlan 30
+ name MANAGEMENT
+vlan 40
+ name POS
+vlan 50
+ name SERVER
+
+interface FastEthernet0/1
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/2
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/3
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/10
+ switchport access vlan 30
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface FastEthernet0/11
+ switchport access vlan 40
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+spanning-tree vlan 1,10,20,30,40,50 root secondary
+
+
+Switch 2:
+
+spanning-tree mode pvst
+
+vlan 10
+ name GUEST
+vlan 20
+ name STAFF
+vlan 30
+ name MANAGEMENT
+vlan 40
+ name POS
+vlan 50
+ name SERVER
+
+interface FastEthernet0/1
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/2
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/3
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/10
+ switchport access vlan 50
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+
+Switch 3:
+
+spanning-tree mode pvst
+
+vlan 10
+ name GUEST
+vlan 20
+ name STAFF
+vlan 30
+ name MANAGEMENT
+vlan 40
+ name POS
+vlan 50
+ name SERVER
+
+interface FastEthernet0/1
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/2
+ switchport trunk allowed vlan 10,20,30,40,50
+ switchport mode trunk
+
+interface FastEthernet0/10
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface FastEthernet0/11
+ switchport access vlan 10
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface FastEthernet0/12
+ switchport access vlan 20
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+VERIFICATION COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Router:
+show ip interface brief
+show access-lists
+show running-config | section access-list
+show ip interface g0/0/0.10
+show ip interface g0/0/0.20
+show ip interface g0/0/0.40
+
+Switches:
+show interfaces trunk
+show spanning-tree summary
+show spanning-tree vlan 10
+show vlan brief
+show running-config
+show spanning-tree interface fa0/10 detail
