@@ -1,0 +1,76 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+PC ADDRESSING
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+PC0: VLAN 10
+IP Address: 192.168.10.10
+Mask: 255.255.255.0
+
+
+PC1: VLAN 10
+IP Address: 192.168.10.11
+Mask: 255.255.255.0
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+SWITCH CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Switch 0:
+vlan 10
+ name USERS
+
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface range fa0/1 - 2
+ channel-group 1 mode active
+
+interface port-channel 1
+ switchport mode trunk
+
+
+
+Switch 1:
+vlan 10
+ name USERS
+
+interface fa0/1
+ switchport mode trunk
+
+interface fa0/2
+ switchport mode trunk
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface range fa0/1 - 2
+ channel-group 1 mode active
+
+interface port-channel 1
+ switchport mode trunk
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+LAB COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ping
+
+show spanning-tree vlan 10
+
+show etherchannel summary
+
+show interfaces port-channel 1 switchport
+
+
