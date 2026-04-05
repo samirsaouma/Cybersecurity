@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+SWITCH CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Switch0:
+
+vlan 10
+ name GUEST
+
+vlan 20
+ name STAFF
+
+vlan 30
+ name MANAGEMENT
+
+vlan 50
+ name DHCP
+
+interface fa0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 1,10,20,30,50
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 50
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface g0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 1,10,20,30,50
+
+
+Switch1:
+
+vlan 10
+ name GUEST
+
+vlan 20
+ name STAFF
+
+vlan 30
+ name MANAGEMENT
+
+vlan 50
+ name DHCP
+
+interface fa0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 1,10,20,30,50
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/11
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+interface fa0/12
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ROUTER CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+interface g0/0/0
+ no shutdown
+
+interface g0/0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip helper-address 192.168.50.3
+
+interface g0/0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 192.168.50.3
+
+interface g0/0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+ ip helper-address 192.168.50.3
+
+interface g0/0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.50.1 255.255.255.248
+ ip helper-address 192.168.50.3
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+SERVER CONFIGS & DHCP POOLS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Server0 Static Ip Addressing:
+IP: 192.168.50.3 
+Subnet: 255.255.255.248
+DNS: 8.8.8.8
+Default Gateway: 192.168.50.1
+
+Pool1:
+Pool Name:       GUEST
+Default Gateway: 192.168.10.1
+DNS Server:      8.8.8.8
+Start IP Address:192.168.10.50
+Subnet Mask:     255.255.255.0
+Maximum Number of Users: 100
+
+Pool2:
+Pool Name:       STAFF
+Default Gateway: 192.168.20.1
+DNS Server:      8.8.8.8
+Start IP Address:192.168.20.50
+Subnet Mask:     255.255.255.0
+Maximum Number of Users: 100
+
+Pool 3:
+Pool Name:       MANAGEMENT
+Default Gateway: 192.168.30.1
+DNS Server:      8.8.8.8
+Start IP Address:192.168.30.50
+Subnet Mask:     255.255.255.0
+Maximum Number of Users: 50
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+VERIFICATION COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+ping 
+show vlan brief
+show interfaces trunk
+show ip interfaces brief
+show running-config | section interface
