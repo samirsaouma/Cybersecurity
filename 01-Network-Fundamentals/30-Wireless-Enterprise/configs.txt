@@ -1,0 +1,148 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+ROUTER CONFIGS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Router0:
+
+interface GigabitEthernet0/0/0
+ no shutdown
+
+interface GigabitEthernet0/0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip access-group 110 in
+
+interface GigabitEthernet0/0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+
+interface GigabitEthernet0/0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 110 deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+access-list 110 permit ip any any
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+SWITCH CONFIGS & INTERFACE
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Switch0:
+
+g0/1 --> Router0
+fa0/10 --> AP0 (Guest)
+fa0/11 --> AP1 (Staff)
+fa0/12 --> AP2 (Management)
+fa0/2 --> Server0 (DHCP)
+
+vlan 10
+ name GUEST
+
+vlan 20
+ name STAFF
+
+vlan 30
+ name MANAGEMENT
+
+interface g0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+
+interface fa0/10
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+
+interface fa0/11
+ switchport mode access
+ switchport access vlan 20
+ spanning-tree portfast
+
+interface fa0/12
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 30
+ spanning-tree portfast
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+SERVER CONFIGS & DHCP POOL
+---------------------------------------------------------------------------------------------------------------------------------------------
+Server0 Static IP:
+
+IP address: 192.168.30.10
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.30.1
+DNS server: 8.8.8.8
+
+DHCP POOLS:
+
+Guest:
+Pool name: Guest
+Default gateway: 192.168.10.1
+DNS server: 8.8.8.8
+Start IP address: 192.168.10.50
+Subnet mask: 255.255.255.0
+Maximum number of users: 100
+
+Staff:
+Pool name: Staff
+Default gateway: 192.168.20.1
+DNS server: 8.8.8.8
+Start IP address: 192.168.20.50
+Subnet mask: 255.255.255.0
+Maximum number of users: 100
+
+Management:
+Pool name: Management
+Default gateway: 192.168.30.1
+DNS server: 8.8.8.8
+Start IP address: 192.168.30.50
+Subnet mask: 255.255.255.0
+Maximum number of users: 100
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ACCESS POINT CONFIGURATIONS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Access Point 0 — Guest
+SSID: GuestWifi
+Channel: 1
+Authentication: No password
+VLAN: VLAN 10
+
+
+Access Point 1 — Staff
+SSID: StaffWifi
+Channel: 6
+Authentication: WPA2-PSK
+Passphrase: CompanynameStaff_2026
+Encryption: AES
+VLAN: VLAN 20
+
+Access Point 2 — Management
+SSID: ManagementWifi
+Channel: 11
+Authentication: WPA2-PSK
+Passphrase: %20sa&)!dsapl_09klm
+Encryption: AES
+VLAN: VLAN 30
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+VERIFICATION COMMANDS
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+show ip interface brief
+
+show vlan summary
+
+ping
+
+show access-list
+
+show spanning-tree interface x
