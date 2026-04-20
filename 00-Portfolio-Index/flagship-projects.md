@@ -18,17 +18,17 @@ A full enterprise-style branch network design combining:
 - wired and wireless user groups
 - centralized services
 
-This project is intended to serve as the first major architecture anchor in the portfolio.
+This project serves as the first major architecture anchor in the portfolio.
 
-## Future Flagship Targets
+## Planned Future Flagship Areas
 
-Planned future flagship projects include:
+Future flagship work is expected to grow into:
 
 - home SOC / SIEM architecture
 - cloud security architecture review
 - identity security design lab
-- ISMS design and control mapping project
-- AI security / governance assessment project
+- ISMS design and control mapping
+- AI security and governance assessment work
 
 ## What makes a project a flagship
 
