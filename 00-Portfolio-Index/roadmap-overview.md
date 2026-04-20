@@ -47,15 +47,15 @@ Output style:
 - governance maturity work
 - control mapping and remediation planning
 
-## Phase 3 — Firm Scaling
+## Long-Term Direction
 
-Goal: build toward a consulting-oriented portfolio that supports repeatable service delivery.
+Planned long-term portfolio emphasis:
 
-Future portfolio emphasis:
-
-- cloud security consulting
-- identity security consulting
+- cloud security
+- identity security
 - GRC and compliance
 - ISO-oriented work
-- PCI / NIS2 readiness
+- PCI and NIS2 readiness
 - AI security and governance
+
+The purpose of the roadmap is to show how technical capability, documentation quality, and architecture thinking are expected to deepen over time.
