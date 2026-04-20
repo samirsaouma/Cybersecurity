@@ -1,24 +1,24 @@
 # Linux Fundamentals
 
-This section is reserved for Linux work developed as part of the Phase 1 capability-building roadmap.
+This section is reserved for Linux work & skills developed.
 
-Planned focus areas:
+Focus areas:
 
 - Linux navigation and file system fundamentals
-- permissions and ownership
-- process and service management
-- package management
-- networking commands and troubleshooting
-- log analysis
-- shell usage and automation basics
-- security-relevant Linux administration concepts
+- Permissions and ownership
+- Process and service management
+- Package management
+- Networking commands and troubleshooting
+- Log analysis
+- Shell usage and automation basics
+- Security-relevant Linux administration concepts
 
-Planned artifact types:
+Artifact types:
 
-- concept notes
-- hands-on labs
-- troubleshooting exercises
-- small practical administration tasks
-- future flagship Linux/security support projects
+- Concept notes
+- Hands-on labs
+- Troubleshooting exercises
+- Small practical administration tasks
+- Future flagship Linux/security support projects
 
-This folder exists to show the planned structure of the portfolio and where Linux capability development will live as it is built out.
+This folder exists to show the Linux capability development over time.

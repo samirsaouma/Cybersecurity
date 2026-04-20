@@ -1,25 +1,17 @@
 # Network Fundamentals
 
-This section contains the current strongest technical foundation in the portfolio.
+This section contains the networking technical foundation in the portfolio.
 
 Focus areas include:
 
-- routing
-- switching
+- Routing
+- Switching
 - VLAN segmentation
 - STP
 - DHCP and relay
 - NAT and PAT
-- wireless design
+- Wireless design
 - ACL-based traffic control
-- troubleshooting and verification
-
-Recommended internal structure:
-
-- `Concept-Notes/`
-- `Labs/`
-- `Troubleshooting/`
-- `Flagship/`
-- `Design-Notes/`
+- Troubleshooting and verification
 
 This section is intended to show practical networking ability, architecture discipline, and troubleshooting development rather than isolated protocol configuration.

@@ -1,8 +1,8 @@
 # Labs
 
-This folder is intended for build-and-verify networking projects.
+This folder is intended for building and verifying networking concepts learnt during studies.
 
-Suggested topic organization:
+Topic(s) Organization/Covered:
 
 - OSPF
 - VLANs
@@ -11,5 +11,7 @@ Suggested topic organization:
 - NAT
 - Wireless
 - ACLs
+- Wireshark
+- Security
 
-Labs in this section should focus on design, implementation, verification, and lessons learned.
+Labs in this section focus on design, implementation, verification, and lessons learned.

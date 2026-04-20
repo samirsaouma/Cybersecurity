@@ -15,14 +15,14 @@ A full enterprise-style branch network design combining:
 - DHCP relay
 - ACL policy enforcement
 - PAT internet access
-- wired and wireless user groups
-- centralized services
+- Wired and wireless user groups
+- Centralized services
 
-This project serves as the first major architecture anchor in the portfolio.
+This project serves as the first larger architecture project in the portfolio.
 
 ## Planned Future Flagship Areas
 
-Future flagship work is expected to grow into:
+Future flagship work:
 
 - home SOC / SIEM architecture
 - cloud security architecture review
@@ -32,10 +32,10 @@ Future flagship work is expected to grow into:
 
 ## What makes a project a flagship
 
-A flagship project should combine:
+A flagship project will combine:
 
-- multiple technologies
-- realistic design decisions
-- structured verification
-- security reasoning
-- strong written documentation
+- Multiple technologies
+- Realistic design decisions
+- Structured verification
+- Security reasoning
+- Strong written documentation

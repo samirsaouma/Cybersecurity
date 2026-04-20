@@ -1,21 +1,21 @@
 # Detection and SOC
 
-This section is reserved for detection engineering, SIEM work, and investigation-oriented casework.
+This section is reserved for detection engineering, SIEM work, and investigation oriented casework.
 
 Planned focus areas:
 
-- alert investigation
-- log analysis
+- Alert investigation
+- Log analysis
 - SIEM fundamentals
-- detection logic
-- incident triage
-- basic detection engineering exposure
-- structured case documentation
+- Detection logic
+- Incident triage
+- Basic detection engineering exposure
+- Structured case documentation
 
 Planned artifact types:
 
 - SOC case writeups
-- detection notes
-- investigation exercises
-- future SIEM and monitoring projects
-- response-oriented troubleshooting work
+- Detection notes
+- Investigation exercises
+- Future SIEM and monitoring projects
+- Response oriented troubleshooting work

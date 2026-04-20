@@ -1,23 +1,23 @@
 # Python Scripting
 
-This section is reserved for Python work developed as part of the Phase 1 capability-building roadmap.
+This section is reserved for Python work developed.
 
-Planned focus areas:
+Focus areas:
 
 - Python fundamentals for security and automation
-- file handling and parsing
-- networking-related scripting
-- simple log processing
-- automation helpers for labs and documentation
-- security utility scripts
-- data handling relevant to investigations and reporting
+- File handling and parsing
+- Networking related scripting
+- Simple log processing
+- Automation helpers for labs and documentation
+- Security utility scripts
+- Data handling relevant to investigations and reporting
 
-Planned artifact types:
+Artifact types:
 
-- practice scripts
-- small automation exercises
-- lab support tools
-- documented mini-projects
-- future security-oriented scripting projects
+- Practice scripts
+- Small automation exercises
+- Lab support tools
+- Documented mini-projects
+- Security-oriented scripting projects
 
-This folder exists to show the planned structure of the portfolio and where Python capability development will live as it is built out.
+This folder exists to show Python capability development over time.

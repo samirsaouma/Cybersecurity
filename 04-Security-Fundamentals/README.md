@@ -2,20 +2,22 @@
 
 This section is reserved for Security+ and early security engineering work.
 
-Planned focus areas:
+Focus areas:
 
-- hardening basics
-- access control
-- authentication and authorization concepts
-- segmentation and policy enforcement
-- secure architecture fundamentals
-- security operations concepts
-- security-relevant troubleshooting
+- Hardening basics
+- Access control
+- Authentication and authorization concepts
+- Segmentation and policy enforcement
+- Secure architecture fundamentals
+- Security operations concepts
+- Security relevant troubleshooting
 
-Planned artifact types:
+Artifact types:
 
-- concept notes
-- labs
-- security control demonstrations
-- architecture notes
-- future flagship expansions built on network fundamentals
+- Concept notes
+- Labs
+- Security control demonstrations
+- Architecture notes
+- Future flagship expansions built on network fundamentals
+
+This folder exists to show basic security capability development over time.

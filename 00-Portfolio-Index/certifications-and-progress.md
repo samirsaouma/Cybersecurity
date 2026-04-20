@@ -1,6 +1,6 @@
 # Certifications and Progress
 
-This file connects certification progress to actual portfolio work.
+This file displays certification progress linked to portfolio work.
 
 ## Completed
 
@@ -11,27 +11,35 @@ This file connects certification progress to actual portfolio work.
 - Credly: https://www.credly.com/users/samir-michel-leonardo-saouma#credly
 
 Primary portfolio alignment:
-- routing and switching labs
+- Routing and switching labs
 - VLAN and ACL segmentation
 - STP and Layer 2 security
 - DHCP relay
 - NAT and PAT
-- wireless design
-- flagship network project
+- Wireless design
+- Flagship network project
+- Tool usage such as Wireshark
 
 ## Current / Next
 
 ### Security+
-Planned portfolio alignment:
-- hardening labs
-- security controls and policy-oriented design
-- access control artifacts
-- future security-focused flagship expansions
+Planned portfolio:
+- Hardening labs
+- Security controls and policy-oriented design
+- Access control artifacts
+- Future security-focused flagship expansions
 
 ## Planned later mapping
 
-Future certification sections should link:
-- learning objective
-- lab evidence
-- flagship work
-- troubleshooting evidence
+Future certifications:
+- AZ-500
+- SC-200
+- SC-300
+- ePJT
+- ISO 27001
+- CISM
+- CRISC
+- PCIP
+- ISO 42001
+- Terraform Associate
+- CCSP

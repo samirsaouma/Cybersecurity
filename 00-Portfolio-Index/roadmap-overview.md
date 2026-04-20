@@ -2,59 +2,55 @@
 
 This portfolio follows a phased development model.
 
-## Phase 1 — Capability Building
-
-Goal: become competitive for junior security and junior consulting roles.
+## Phase 1
 
 Focus areas:
 
-- networking fundamentals
-- security fundamentals
-- cloud security fundamentals
-- identity and access fundamentals
+- Networking fundamentals
+- Security fundamentals
+- Cloud security fundamentals
+- Identity and access fundamentals
 - SIEM and detection basics
-- architecture awareness
-- technical troubleshooting
-- structured documentation
+- Architecture awareness
+- Technical troubleshooting
+- Structured documentation
 
 Output style:
 
-- concept notes
-- hands-on labs
-- troubleshooting cases
-- flagship projects
-- consulting-style written artifacts
+- Concept notes
+- Hands-on labs
+- Troubleshooting cases
+- Flagship projects
+- Consulting style written artifacts
 
-## Phase 2 — Consulting Specialization
-
-Goal: move from technically credible junior to consulting-capable security professional.
+## Phase 2 
 
 Focus areas:
 
-- risk analysis
-- governance thinking
-- security architecture
-- technical documentation
-- executive communication
-- cloud and identity security depth
-- compliance and framework interpretation
+- Risk analysis
+- Governance thinking
+- Security architecture
+- Technical documentation
+- Executive communication
+- Cloud and identity security depth
+- Compliance and framework interpretation
 
 Output style:
 
-- risk registers
-- assessment reports
-- architecture reviews
-- governance maturity work
-- control mapping and remediation planning
+- Risk registers
+- Assessment reports
+- Architecture reviews
+- Governance maturity work
+- Control mapping and remediation planning
 
 ## Long-Term Direction
 
 Planned long-term portfolio emphasis:
 
-- cloud security
-- identity security
+- Cloud security
+- Identity security
 - GRC and compliance
-- ISO-oriented work
+- ISO oriented work
 - PCI and NIS2 readiness
 - AI security and governance
 

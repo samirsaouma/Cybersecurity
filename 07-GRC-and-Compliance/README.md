@@ -1,21 +1,21 @@
 # GRC and Compliance
 
-This section is reserved for governance, risk, compliance, and consulting-style security documentation.
+This section is reserved for governance, risk, compliance, and consulting style security documentation.
 
 Planned focus areas:
 
-- risk assessment
-- risk registers
-- control mapping
-- ISO-oriented work
-- policy structure
-- remediation planning
-- executive-style security summaries
+- Risk assessment
+- Risk registers
+- Control mapping
+- ISO oriented work
+- Policy structure
+- Remediation planning
+- Executive style security summaries
 
 Planned artifact types:
 
-- risk assessment labs
+- Risk assessment labs
 - ISMS design work
-- control mapping documents
-- governance recommendations
-- future compliance-oriented flagship projects
+- Control mapping documents
+- Governance recommendations
+- Future compliance-oriented flagship projects
