@@ -1,0 +1,68 @@
+=====================================================================================
+Security-01 Secure Management Plane with SSH
+=====================================================================================
+Router - Sec1
+=====================================================================================
+hostname Sec1
+service password-encryption
+ip domain-name local.lab
+ip ssh version 2
+username admin privilege 15 secret StrongPass123!
+
+banner motd #Unauthorized Access is Prohibited#
+
+access-list 10 permit 192.168.10.10
+access-list 10 deny any
+
+interface GigabitEthernet0/0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+
+line console 0
+ login local
+ exec-timeout 5 0
+
+line vty 0 4
+ access-class 10 in
+ exec-timeout 5 0
+ login local
+ transport input ssh
+
+=====================================================================================
+Switch - Sec2
+=====================================================================================
+hostname Sec2
+service password-encryption
+ip domain-name local.lab
+ip ssh version 2
+username admin secret StrongPass123!
+
+banner motd #Authorized Administrators Only#
+
+interface Vlan1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+
+ip default-gateway 192.168.10.1
+
+line console 0
+ login local
+ exec-timeout 5 0
+
+line vty 0 4
+ exec-timeout 5 0
+ login local
+ transport input ssh
+
+=====================================================================================
+PC Addressing
+=====================================================================================
+Admin PC
+IP address: 192.168.10.10
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.10.1
+
+User PC
+IP address: 192.168.10.11
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.10.1
