@@ -1,0 +1,7 @@
+INFO User samir logged in successfully
+WARNING Failed login for user admin from 192.168.1.10
+INFO Backup job completed
+WARNING Failed login for user root from 10.0.0.5
+ERROR Disk usage threshold exceeded
+WARNING Failed login for user guest from 172.16.1.15
+INFO Service restarted successfully

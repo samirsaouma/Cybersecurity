@@ -1,0 +1,5 @@
+WARNING Failed login for user admin from 192.168.1.10
+WARNING Failed login for user root from 10.0.0.5
+WARNING Failed login for user guest from 172.16.1.15
+
+Total failed login attempts: 3
