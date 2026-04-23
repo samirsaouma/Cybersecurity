@@ -1,0 +1,82 @@
+=====================================================================================
+Security-03 DHCP Snooping Baseline
+=====================================================================================
+Switch - SEC-SW-DHCP
+=====================================================================================
+
+hostname SEC-SW-DHCP
+
+vlan 10
+ name USERS
+
+ip dhcp snooping
+ip dhcp snooping vlan 10
+
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+ ip dhcp snooping trust
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 10
+ ip dhcp snooping limit rate 10
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 10
+ ip dhcp snooping limit rate 10
+
+=====================================================================================
+Legitimate DHCP Server
+=====================================================================================
+
+LEGIT-DHCP:
+IP address: 192.168.50.2
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.50.1
+DNS server: 8.8.8.8
+
+DHCP Pool:
+Pool name: UserPool
+Default gateway: 192.168.50.1
+DNS server: 8.8.8.8
+Start IP address: 192.168.50.10
+Subnet mask: 255.255.255.0
+Maximum users: 100
+
+=====================================================================================
+Rogue DHCP Server
+=====================================================================================
+
+ROGUE-DHCP:
+IP address: 192.168.50.3
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.50.1
+DNS server: 8.8.8.8
+
+DHCP Pool:
+Pool name: UserPoolRogue
+Default gateway: 192.168.99.1
+DNS server: 1.1.1.1
+Start IP address: 192.168.99.10
+Subnet mask: 255.255.255.0
+Maximum users: 100
+
+=====================================================================================
+Client PC
+=====================================================================================
+
+DHCP lease from legitimate server:
+- IP address: 192.168.50.10
+- Subnet mask: 255.255.255.0
+- Default gateway: 192.168.50.1
+- DNS server: 8.8.8.8
+
+=====================================================================================Interface Connections
+=====================================================================================
+
+Switch0:
+fa0/1 --> LEGIT-DHCP
+fa0/2 --> Client PC
+fa0/3 --> ROGUE-DHCP
