@@ -1,0 +1,16 @@
+Failed Login Summary Report
+---------------------------
+Total failed login events: 6
+
+User counts:
+- admin: 3
+- root: 1
+- guest: 2
+
+Source IP addresses:
+- 192.168.1.10
+- 10.0.0.5
+- 192.168.1.10
+- 172.16.1.15
+- 10.0.0.5
+- 172.16.1.15
