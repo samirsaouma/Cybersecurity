@@ -1,0 +1,68 @@
+=====================================================================================
+Security-04 Dynamic ARP Inspection Baseline
+=====================================================================================
+Switch - SEC-SW-DAI
+=====================================================================================
+
+hostname SEC-SW-DAI
+
+vlan 10
+ name USERS
+
+ip dhcp snooping
+ip dhcp snooping vlan 10
+
+ip arp inspection vlan 10
+
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+ ip dhcp snooping trust
+ ip arp inspection trust
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 10
+ ip dhcp snooping limit rate 10
+
+=====================================================================================
+DHCP Server - DHCP-SRV
+=====================================================================================
+
+IP address: 192.168.60.2
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.60.1
+DNS server: 8.8.8.8
+
+DHCP Pool:
+- Pool Name: UserPool
+- Default Gateway: 192.168.60.1
+- DNS Werver: 8.8.8.8
+- Start IP Address: 192.168.60.10
+- Subnet Mask: 255.255.255.0
+- Maximum Users: 100
+
+=====================================================================================
+Client PC
+=====================================================================================
+
+DHCP lease:
+IP Address: 192.168.60.10
+Subnet Mask: 255.255.255.0
+Default Gateway: 192.168.60.1
+DNS Server: 8.8.8.8
+
+=====================================================================================
+Interface Connections
+=====================================================================================
+
+fa0/1 --> DHCP-SRV
+fa0/2 --> Client PC
+
+=====================================================================================
+Additional Notes on Platform Support
+=====================================================================================
+
+Packet Tracer does not command:
+
+ ip arp inspection limit rate
