@@ -1,0 +1,57 @@
+=====================================================================================
+Security-05 Router Login Protection and Session Hardening
+=====================================================================================
+Router - SEC-R5
+=====================================================================================
+
+hostname SEC-R5
+service password-encryption
+ip domain-name local.lab
+ip ssh version 2
+
+username admin privilege 15 secret StrongPass123!
+
+login block-for 120 attempts 3 within 60
+
+banner motd ^CUnauthorized Access is Prohibited^C
+
+interface g0/0/0
+ ip address 192.168.70.1 255.255.255.0
+ no shutdown
+
+line console 0
+ login local
+
+line vty 0 4
+ exec-timeout 5 0
+ login local
+ transport input ssh
+
+=====================================================================================
+PC0 Addressing
+=====================================================================================
+
+IP address: 192.168.70.2
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.70.1
+
+=====================================================================================
+Connections
+=====================================================================================
+
+PC0 fa0/1 -> SW0 fa0/1
+SW0 g0/1 -> Router g0/0/0
+
+=====================================================================================
+Platform Support
+=====================================================================================
+
+Packet Tracer accepted and demonstrated:
+- login block-for 120 attempts 3 within 60
+- SSH-only VTY access
+- local login
+- banner
+- exec-timeout on VTY lines
+
+Packet Tracer did not properly support:
+- login delay 3
