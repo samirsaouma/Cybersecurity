@@ -1,0 +1,8 @@
+Suspicious Username Summary
+--------------------------------------------------
+admin: 3 failed login attempt(s)
+guest: 3 failed login attempt(s)
+root: 1 failed login attempt(s)
+test: 1 failed login attempt(s)
+
+Total unique usernames targeted: 4

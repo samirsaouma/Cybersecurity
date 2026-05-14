@@ -1,0 +1,10 @@
+WARNING Failed login for user admin from 192.168.1.10
+WARNING Failed login for user root from 10.0.0.5
+WARNING Failed login for user admin from 192.168.1.11
+INFO User samir logged in successfully
+WARNING Failed login for user guest from 172.16.1.15
+WARNING Failed login for user admin from 10.0.0.5
+WARNING Failed login for user guest from 172.16.1.16
+WARNING Failed login for user test from 192.168.1.20
+WARNING Failed login for user guest from 172.16.1.15
+ERROR Disk usage threshold exceeded
