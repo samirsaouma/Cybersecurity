@@ -1,0 +1,7 @@
+Failed Login Threshold Alert Report
+-----------------------------------
+Alert threshold: 3 failed login attempts
+
+ALERT: 192.168.1.10 reached 4 failed login attempts
+ALERT: 10.0.0.5 reached 3 failed login attempts
+OK: 172.16.1.15 had 1 failed login attempt(s)
