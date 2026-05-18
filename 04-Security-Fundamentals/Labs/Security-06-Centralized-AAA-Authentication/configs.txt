@@ -1,0 +1,77 @@
+=====================================================================================
+Security-06 Centralized AAA Authentication with RADIUS
+=====================================================================================
+Router0 Configurations
+=====================================================================================
+
+hostname SEC-R6
+service password-encryption
+ip domain-name local.lab
+ip ssh version 2
+
+username localadmin privilege 15 secret LocalPass123!
+
+aaa new-model
+aaa authentication login default group radius local
+aaa authorization exec default local
+
+radius server 192.168.90.10
+ address ipv4 192.168.90.10 auth-port 1645
+ key RadiusKey123
+
+interface GigabitEthernet0/0/0
+ ip address 192.168.90.1 255.255.255.0
+ no shutdown
+
+line console 0
+ exec-timeout 5 0
+
+line vty 0 4
+ exec-timeout 5 0
+ login authentication default
+ transport input ssh
+
+=====================================================================================
+Switch0 Configuration
+=====================================================================================
+
+interface vlan1
+ ip address 192.168.90.2 255.255.255.0
+ no shutdown
+
+ip default-gateway 192.168.90.1
+
+=====================================================================================
+AAA-Server Configuration
+=====================================================================================
+
+IP address: 192.168.90.10
+Subnet mask: 255.255.255.0
+Default gateway: 192.168.90.1
+
+
+Network Configuration:
+- Client name: SEC-R6
+- Client IP: 192.168.90.1
+- Server type: RADIUS
+- Key: RadiusKey123
+
+User Setup:
+- Username: admin
+- Password: AdminPass123!
+
+=====================================================================================
+User1 PC Configuration
+=====================================================================================
+
+IP Address: 192.168.90.20
+Subnet Mask: 255.255.255.0
+Default Gateway: 192.168.90.1
+
+=====================================================================================
+Connections
+=====================================================================================
+
+Switch0 fa0/1 --> User1 fa0
+Switch0 fa0/2 --> AAA-Server fa0
+Switch0 g0/1 --> Router0 g0/0/0
